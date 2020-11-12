@@ -1,91 +1,46 @@
-const { DateTime } = require('luxon');
-const fs = require('fs');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
+// Filters
+const dateFilter = require('./src/filters/date-filter.js');
+const w3DateFilter = require('./src/filters/w3-date-filter.js');
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
-  eleventyConfig.setDataDeepMerge(true);
-
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
-
-  eleventyConfig.addFilter('readableDate', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
-      'dd LLL yyyy'
+module.exports = config => {
+  // Add filters
+  config.addFilter('dateFilter', dateFilter);
+  config.addFilter('w3DateFilter', w3DateFilter);
+  // Set directories to pass through to the dist folder
+  config.addPassthroughCopy('./src/images/');
+  // Returns work items, sorted by display order
+  config.addCollection('work', collection => {
+    return sortByDisplayOrder(collection.getFilteredByGlob('./src/work/*.md'));
+  });
+  // Plugins
+  config.addPlugin(rssPlugin);
+  // Returns work items, sorted by display order then filtered by featured
+  config.addCollection('featuredWork', collection => {
+    return sortByDisplayOrder(collection.getFilteredByGlob('./src/work/*.md')).filter(
+      x => x.data.featured
     );
   });
-
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter('htmlDateString', dateObj => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+  // Returns a collection of blog posts in reverse date order
+  config.addCollection('blog', collection => {
+    return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
   });
-
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter('head', (array, n) => {
-    if (n < 0) {
-      return array.slice(n);
-    }
-
-    return array.slice(0, n);
+  // Returns a list of people ordered by filename
+  config.addCollection('people', collection => {
+    return collection.getFilteredByGlob('./src/people/*.md').sort((a, b) => {
+      return Number(a.fileSlug) > Number(b.fileSlug) ? 1 : -1;
+    });
   });
-
-  eleventyConfig.addCollection('tagList', require('./_11ty/getTagList'));
-
-  eleventyConfig.addPassthroughCopy('img');
-  eleventyConfig.addPassthroughCopy('css');
-
-  /* Markdown Plugins */
-  let markdownIt = require('markdown-it');
-  let markdownItAnchor = require('markdown-it-anchor');
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true,
-  };
-  let opts = {
-    permalink: true,
-    permalinkClass: 'direct-link',
-    permalinkSymbol: '#',
-  };
-
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt(options).use(markdownItAnchor, opts)
-  );
-
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
-
-        browserSync.addMiddleware('*', (req, res) => {
-          // Provides the 404 content without redirect.
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
-  });
-
+  // Tell 11ty to use the .eleventyignore and ignore our .gitignore file
+  config.setUseGitIgnore(false);
   return {
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
-
-    // If your site lives in a different subdirectory, change this.
-    // Leading or trailing slashes are all normalized away, so don’t worry about it.
-    // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-    // This is only used for URLs (it does not affect your file structure)
-    pathPrefix: '/',
-
-    markdownTemplateEngine: 'liquid',
-    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
-    passthroughFileCopy: true,
+    htmlTemplateEngine: 'njk',
     dir: {
-      input: '.',
-      includes: '_includes',
-      data: '_data',
-      output: '_site',
-    },
+      input: 'src',
+      output: 'dist'
+    }
   };
 };
