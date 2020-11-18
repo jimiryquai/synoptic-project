@@ -5,8 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "start": "npx gulp && concurrently 'npx gulp watch' 'npx eleventy --serve'",
-    "production": "NODE_ENV=production npx gulp && NODE_ENV=production eleventy",
-    "cypress:open": "cypress open"
+    "production": "NODE_ENV=production npx gulp && NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
@@ -34,8 +33,5 @@
     "html-minifier": "^4.0.0",
     "moment": "^2.26.0",
     "sass": "^1.26.8"
-  },
-  "devDependencies": {
-    "cypress": "^5.6.0"
   }
 }
