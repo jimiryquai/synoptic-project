@@ -8,6 +8,7 @@
   > * {
     grid-column: 1;
   }
+
   &__header {
     padding: get-size('300') get-size('500');
     background: rgba(get-color('tertiary'), 0.95);
@@ -42,7 +43,7 @@
   }
 
   &__content {
-    grid-row: 4;
+    grid-row: 2;
 
     p {
       max-width: 30ch;

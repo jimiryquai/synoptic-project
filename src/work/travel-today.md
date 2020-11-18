@@ -27,5 +27,5 @@ gallery:
     summary: 'We give the user total control but keep it clean and
     simple for them.'
     image: '/images/work/travel-today-gallery-2.jpg'
-team: [1, 2, 5]
+team: [1, 2, 3]
 ---

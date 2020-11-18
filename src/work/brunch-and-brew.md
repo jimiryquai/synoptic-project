@@ -3,9 +3,9 @@ title: 'Brunch & Brew'
 summary: 'An app that helps to bring different generations together via
 intergenerational volunteering.'
 displayOrder: 3
-featured: true 
+featured: true
 hero:
-  image: '/images/work/brunch-and-brew-hero.jpg'
+  image: '/images/work/bride-above.jpg'
   imageAlt: 'A composition of the main landing screen and other key
   views'
 keyFacts:
@@ -34,5 +34,5 @@ gallery:
     summary: 'Using charts we help communicate the information that
     means the most.'
     image: '/images/work/brunch-and-brew-gallery-3.jpg'
-team: [2, 5, 4]
+team: [1, 2, 3]
 ---

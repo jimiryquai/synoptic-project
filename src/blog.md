@@ -1,5 +1,5 @@
 ---
-title: 'The Issue 33 Blog'
+title: 'The 01 Big Day Blog'
 layout: 'layouts/feed.html'
 pagination:
   data: collections.blog

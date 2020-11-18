@@ -1,5 +1,7 @@
 {% extends "layouts/base.html" %}
+
 {% set pageCriticalStyles = ['css/page.css'] %}
+
 {% set pageHeaderTitle = title %}
 
 {# Grab other posts that aren't this one for the 'more from the blog' feed #}
@@ -23,7 +25,7 @@
 {% block content %}
   <article>
     {% include "partials/page-header.html" %}
-
+    
     <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
       {{ content | safe }}
     </div>

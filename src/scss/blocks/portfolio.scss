@@ -1,0 +1,70 @@
+
+    [role="tablist"] {
+      padding: 0;
+      margin: 0;
+    }
+
+    [role="tablist"] li,
+    [role="tablist"] a {
+      display: inline-block;
+    }
+
+    [role="tablist"] a {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5rem 1em;
+      outline: 0;
+    }
+
+    [role="tablist"] [aria-selected] {
+      border: 2px dashed #38445b;
+      background: #fff;
+      border-bottom: 0;
+      position: relative;
+      top: 2px;
+      outline: 0;
+    }
+
+    [role="tabpanel"] {
+      border: 2px dashed #38445b;
+      padding: 1.5rem;
+    }
+
+    // [role="tabpanel"] *+* {
+    //   margin-top: 0.75rem;
+    // }
+
+    div.tabbed *:focus {
+      /* ↑ for WHCM users */
+      box-shadow: inset 0 0 0 4px #505c73;
+    }
+
+    @media (max-width: 550px) {
+
+      [role="tablist"] li,
+      [role="tablist"] a {
+        display: block;
+        position: static;
+      }
+
+      [role="tablist"] a {
+        border: 2px dashed #513aa6;
+      }
+
+      [role="tablist"] li+li a {
+        border-top: 0 !important;
+      }
+
+      [role="tablist"] [aria-selected] {
+        position: static;
+      }
+
+      [role="tablist"] [aria-selected]::after {
+        content: '\0020⬅';
+      }
+
+      [role="tabpanel"] {
+        border-top: 0;
+      }
+
+    }

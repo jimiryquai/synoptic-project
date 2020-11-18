@@ -1,4 +1,5 @@
 .button {
+  // I don't over-using @extends, but in this case, consistency is more important  
   @extend .radius;
 
   display: inline-block;

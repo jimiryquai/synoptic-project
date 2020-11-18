@@ -1,35 +1,34 @@
 ---
-title: 'Outgoings iOS App'
-summary: 'A native iOS app to help people to keep a track of their finances by providing easy-to use tracking and organising capabilities.'
+title: 'Destination Wedding: Romania'
+summary: 'Not much could be more romantic than a destination wedding in Europe, a continent full of history, including the location of some of the greatest love stories of all time.'
 displayOrder: 1
 featured: true
 hero:
-  image: '/images/work/outgoings-hero.jpg'
-  imageAlt: 'Screens from the app, composed together as a group.'
+  image: '/images/work/destination-hero.jpg'
+  imageAlt: 'Bride in the front, Groom in the back, looking toward camera.'
 keyFacts:
-  - primary: '50%'
-    secondary: 'Increase in engagement'
-  - primary: '10%'
-    secondary: 'Increase in sales'
-  - primary: '£1,000,000'
-    secondary: 'In extra revenue'
-  - primary: '750 hours'
-    secondary: 'In saved productivity'
-  - primary: '4'
-    secondary: 'International awards'
-  - primary: '£28,000'
-    secondary: 'Saved in digital advertising'
+  - primary: '200'
+    secondary: 'Guests'
+  - primary: '80%'
+    secondary: 'Less stress'
+  - primary: '100%'
+    secondary: 'More fun'
+  - primary: '240 hours'
+    secondary: 'In time saved'
+  - primary: '3'
+    secondary: 'Professionals on hand'
+  - primary: '£10,000'
+    secondary: 'Saved'
 gallery:
-  - title: 'Multi-account support'
-    summary: 'We wanted the app to be as useful as possible, so
-    multi-account support was a natural choice.'
-    image: '/images/work/outgoings-gallery-1.jpg'
-  - title: 'Concise summaries'
-    summary: 'The numbers speak volumes, so we give them center stage.'
-    image: '/images/work/outgoings-gallery-2.jpg'
-  - title: 'Crystal clear information for users'
-    summary: 'No distractions, no anti-patterns, just clear,
-    user-friendly information'
-    image: '/images/placeholders/work-item.jpg'
-team: [1, 4, 6]
+  - title: 'Beautiful photography'
+    summary: 'They wanted the shots to be as natural as possible, so
+    we gave them the space they needed.'
+    image: '/images/work/destination-gallery-1.jpg'
+  - title: 'Stunning makeup'
+    summary: 'Their natural beauty speaks volumes, so we gave them centre stage.'
+    image: '/images/work/destination-gallery-2.jpg'
+  - title: 'Our lenses captured the love'
+    summary: 'A day to remember'
+    image: '/images/work/destination-gallery-3.jpg'
+team: [3, 1, 2]
 ---

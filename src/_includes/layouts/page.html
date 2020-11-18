@@ -9,6 +9,49 @@
   <div class="panel dot-shadow bg-tertiary-glare">
     <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 ]">
       {{ content | safe }}
+      <form class="[ form ]" action="https://getform.io/f/87b78386-bdbe-422e-a046-3dba7ee35e33" method="POST">
+        <fieldset class="[ form__set flow ]">
+          <label class="[ form__label ]" for="name-input">
+            <input type="text"
+                  class="[ form__input form__input_name ] [ radius ]"
+                  id="name-input"
+                  name="name-input"
+                  placeholder="Name"
+                  minlength="2"
+                  maxlength="40"
+                  pattern="[A-Za-z -]{2,}"
+                  aria-describedby="name-input-error"
+                  required
+                  >
+            <span class="[ form__input-error ]" id="name-input-error"></span>
+          </label>
+          <label class="form__label" for="email-input">
+            <input type="email"
+                   class="[ form__input form__input_email ]"
+                   id="email-input"
+                   name="email-input"
+                   placeholder="Email Address"
+                   aria-describedby="email-input-error"
+                   required
+                   >
+            <span class="[ form__input-error ]" id="email-input-error"></span>
+          </label>
+          <label class="[ form__label ]" for="message-input">
+            <input type="text"
+                   class="[ form__input form__input_message ]"
+                   id="message-input"
+                   name="message-input"
+                   placeholder="Enter your query/message here"
+                   minlength="1"
+                   maxlength="30"
+                   aria-describedby="message-input-error"
+                   required
+                   >
+            <span class="[ form__input-error ]" id="message-input-error"></span>
+          </label>
+          <button class="[ button ]" type="submit">Send</button>
+        </fieldset>
+      </form>
     </div>
   </div>
 </article>

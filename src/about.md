@@ -1,9 +1,7 @@
 ---
-title: 'About Issue 33'
+title: 'About 01 Big Day'
 layout: 'layouts/about.html'
 permalink: '/about-us/index.html'
 ---
 
-Wanna see our foosball table? Nah, only kidding. We’re a made-up
-agency that are being used as the context for the Piccalilli course,
-[Learn Eleventy From Scratch](https://piccalil.li/course/learn-eleventy-from-scratch/).
+We’re a family buisiness that specialises in wedding photography for your big day

@@ -1,28 +1,24 @@
 ---
-title: 'Issue 33'
-metaDesc: 'A made up agency site that you build if you take Learn
-Eleventy From Scratch, by Piccalilli'
+title: '01 Big Day'
+metaDesc: 'Consistently voted among the top 10 wedding photographers in the UK'
 layout: 'layouts/home.html'
 intro:
-  eyebrow: 'Digital Marketing is our'
-  main: 'Bread & Butter'
-  summary: 'Let us help you create the perfect campaign with our multi-faceted team of talented creatives.'
+  eyebrow: 'Your Big Day Is Our'
+  main: 'Biggest Honour'
+  summary: 'Let us help you create the perfect wedding day with our award winning photography.'
   buttonText: 'See our work'
   buttonUrl: '/work'
-  image: '/images/bg/toast.jpg'
-  imageAlt: 'Buttered toasted white bread'
+  image: '/images/bg/marius-muresan.jpg'
+  imageAlt: 'A beautiful bride holding flowers'
 primaryCTA:
-  title: 'This is an agency that doesn’t actually exist'
+  title: 'Award-winning photography'
   summary:
-    'This is the project site you build when you take the “Learn
-    Eleventy From Scratch” course so it is all made up as a pretend
-    context. You will learn a lot about Eleventy by building this site
-    though. Take the course today!'
-  buttonText: 'Buy a copy'
-  buttonUrl: 'https://piccalil.li/course/learn-eleventy-from-scratch/'
+    'We are an award-winning family business specialising in wedding photography. Let our lenses eternalise your big day'
+  buttonText: 'See our work'
+  buttonUrl: '/#featured-work'
 featuredWork:
   title: 'Selected work'
-  summary: 'Some stuff that should give you an idea of what we’re all about.'
+  summary: 'Some of our best work.'
 studioFeed:
   title: 'From inside the studio'
 ---

@@ -42,4 +42,7 @@
   h3 + * {
     --flow-space: #{get-size('300')};
   }
+
+  display: flex;
+  justify-content: center;
 }

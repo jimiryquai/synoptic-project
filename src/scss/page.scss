@@ -1,10 +1,10 @@
 // First up: config and functions
 @import 'config';
 
-// Set Gorko to output no CSS for this file
+// Set gorko to output no CSS for this file
 $outputTokenCSS: false;
 
-// Next: pull in Gorko for design tokens
+// Next: pull in gorko for design tokens
 @import '../../node_modules/gorko/gorko.scss';
 
 // Generic styles
@@ -16,6 +16,7 @@ time[datetime] {
 }
 
 // Pull in blocks
-@import 'blocks/post-list';
-@import 'blocks/pagination';
 @import 'blocks/page-content';
+@import 'blocks/pagination';
+@import 'blocks/post-list';
+@import 'blocks/form';

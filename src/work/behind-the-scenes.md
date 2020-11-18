@@ -5,7 +5,7 @@ beautiful places on earth.'
 displayOrder: 2
 featured: true
 hero:
-  image: '/images/work/behind-the-scenes-hero.jpg'
+  image: '/images/work/bride-close.jpg'
   imageAlt: 'A composition of all the views from the app'
 keyFacts:
   - primary: '50%'
@@ -34,5 +34,5 @@ gallery:
     summary: 'We made the the stunning photography sit center stage
     because let’s be honest: that’s what you all came for.'
     image: '/images/work/behind-the-scenes-gallery-3.jpg'
-team: [1, 4, 6]
+team: [1, 2, 3]
 ---

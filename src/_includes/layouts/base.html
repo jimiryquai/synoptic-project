@@ -18,7 +18,6 @@
       {% endfor %}
     {% endif %}
 
-    <link rel="stylesheet" media="print" href="/css/global.css?{{ assetHash }}" onload="this.media='all'" />
     <link rel="stylesheet" media="print" href="/fonts/fonts.css?{{ assetHash }}" onload="this.media='all'" />
 
     {# Add facility for pages to declare an array of stylesheet paths #}
@@ -38,9 +37,14 @@
 
       <footer role="contentinfo" class="site-foot">
         <div class="wrapper">
-          <p>This is a made up agency for the course, <a href="https://piccalil.li/course/learn-eleventy-from-scratch/">“Learn Eleventy From Scratch”</a>.</p>
+          <p>Made with ❤️ by James Ryan.</p>
         </div>
       </footer>
     </div>
+  {% if js %}
+    <script>
+      {{ js | safe }}
+    </script>
+  {% endif %}
   </body>
 </html>

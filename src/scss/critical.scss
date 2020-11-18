@@ -5,6 +5,7 @@
 @import '../../node_modules/gorko/gorko.scss';
 
 @import 'reset';
+
 // Global styles start
 :root {
   --flow-space: #{get-size('600')};
@@ -24,9 +25,8 @@ a:not([class]) {
   text-decoration-color: get-color('quinary');
 }
 
-:focus {
-  outline: 2px dashed get-color('primary');
-  outline-offset: 0.25rem;
+:focus:not([role="tab"]) {
+  outline: none;
 }
 
 main:focus {
@@ -48,7 +48,7 @@ h4 {
 ::selection {
   color: get-color('light');
 
-  // We set this as an RGBA because that’s how you get a solid color, by using 0.99
+  // We set this as an RGBA because that's how you get a solid color, by using 0.99
   // alpha value. Browsers are wild.
   background: rgba(get-color('dark-shade'), 0.99);
 }
@@ -68,27 +68,29 @@ h4 {
   background-color: get-color('dark');
   border-radius: 0.25rem;
 }
+
 // Import blocks
-@import 'blocks/definition-group';
-@import 'blocks/tags-list';
-@import 'blocks/site-foot';
-@import 'blocks/site-head';
-@import 'blocks/nav';
 @import 'blocks/button';
-@import 'blocks/skip-link';
 @import 'blocks/cta';
+@import 'blocks/definition-group';
+@import 'blocks/gallery';
 @import 'blocks/page-header';
 @import 'blocks/people';
 @import 'blocks/person';
+@import 'blocks/site-foot';
+@import 'blocks/site-head';
+@import 'blocks/tags-list';
+@import 'blocks/nav';
+@import 'blocks/skip-link';
 
 // Import utilities
+@import 'utilities/auto-grid';
 @import 'utilities/dot-shadow';
 @import 'utilities/flow';
 @import 'utilities/frame';
+@import 'utilities/headline';
 @import 'utilities/panel';
 @import 'utilities/radius';
 @import 'utilities/site-wrap';
 @import 'utilities/visually-hidden';
 @import 'utilities/wrapper';
-@import 'utilities/headline';
-@import 'utilities/auto-grid';

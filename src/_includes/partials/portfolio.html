@@ -1,0 +1,67 @@
+<div class="[ tabbed ] [ nav ] [ site-head__nav ] [ font-sans ]">
+  <ul class="nav__list" role="tablist">
+    <li role="presentation">
+      <a href="#section1" role="tab" id="tab1" aria-selected="true">Brides</a>
+    </li>
+    <li role="presentation">
+      <a href="#section2" role="tab" id="tab2" tabindex="-1">Grooms</a>
+    </li>
+    <li role="presentation">
+      <a href="#section3" role="tab" id="tab3" tabindex="-1">Cakes</a>
+    </li>
+  </ul>
+  <section id="section1" role="tabpanel" tabindex="-1" aria-labelledby="tab1">
+    <div class="people">
+      <ol class="auto-grid">
+        {% for item in collections.bridalPortfolio %}
+          <li>
+            <div class="[ person ] [ frame ]" data-frame="quaternary">
+              <img class="[ person__image ] [ radius ]"
+              src="{{ item.data.image }}"
+              alt="Image of {{ item.data.alt }}"
+              loading="lazy"
+              class="radius"
+              draggable="false" />
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  <section id="section2" role="tabpanel" tabindex="-1" aria-labelledby="tab2" hidden="">
+    <div class="people">
+      <ol class="auto-grid">
+        {% for item in collections.groomPortfolio %}
+        <li>
+          <div class="[ person ] [ frame ]" data-frame="quaternary">
+            <img class="[ person__image ] [ radius ]"
+            src="{{ item.data.image }}"
+            alt="Image of {{ item.data.alt }}"
+            loading="lazy"
+            class="radius"
+            draggable="false" />
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+  <section id="section3" role="tabpanel" tabindex="-1" aria-labelledby="tab3" hidden="">
+    <div class="people">
+      <ol class="auto-grid">
+        {% for item in collections.cakePortfolio %}
+        <li>
+          <div class="[ person ] [ frame ]" data-frame="quaternary">
+            <img class="[ person__image ] [ radius ]"
+            src="{{ item.data.image }}"
+            alt="Image of {{ item.data.alt }}"
+            loading="lazy"
+            class="radius"
+            draggable="false" />
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
+</div>
